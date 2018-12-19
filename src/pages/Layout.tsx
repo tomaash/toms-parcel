@@ -1,28 +1,14 @@
 import * as React from 'react'
-import { MainWrapper } from './Main'
-import { NavLink } from 'react-mobx-router5'
+import { Root } from './Root'
+import { Route } from 'react-router5'
+import { Menu } from '../components/Menu'
 export class Layout extends React.Component {
   render() {
-    return <div>
+    return (
       <div>
-        <h4>Header</h4>
-        <NavLink
-          className="hello"
-          linkClassName="goodbye"
-          routeName="foo">
-          Foo
-        </NavLink>
-        <NavLink
-          className="hello"
-          linkClassName="goodbye"
-          routeName="bar">
-          Bar
-        </NavLink>
+        <Menu />
+        <Route>{({ route }) => <Root route={route} />}</Route>
       </div>
-      <div>
-        <h4>Body</h4>
-        <MainWrapper />
-      </div>
-    </div>
+    )
   }
 }

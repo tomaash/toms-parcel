@@ -6,6 +6,7 @@
     "jsx": "react",
     "noImplicitAny": false,
     "rootDir": "./src",
+    "strictNullChecks": false,
     "experimentalDecorators": true,
     "importHelpers": true,
     "lib": [

@@ -13,3 +13,7 @@
 .simple-button {
   @apply border rounded p-1
 }
+
+.activeLink {
+  @apply text-red
+}

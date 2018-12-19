@@ -11,15 +11,15 @@
   "main": "src/index.tsx",
   "scripts": {
     "develop": "concurrently -r \"npm:type-check:watch\" \"npm:start\"",
-    "start": "parcel ./src/index.html",
-    "build": "parcel build ./src/index.html --public-url '/' --experimental-scope-hoisting",
+    "start": "parcel ./src/index.html --no-autoinstall",
+    "build": "parcel build ./src/index.html --public-url '/' --experimental-scope-hoisting --no-autoinstall",
     "prettify": "prettier --write './src/**/*.{ts,tsx}'",
     "test": "jest",
     "test:watch": "jest --watch",
     "type-check": "tsc --noEmit",
     "type-check:watch": "tsc --noEmit --watch"
   },
-  "husky": {
+  "//husky": {
     "hooks": {
       "pre-commit": "npm run prettify && npm run test"
     }
@@ -53,19 +53,20 @@
     "lodash-es": "^4.17.11",
     "mobx": "^5.8.0",
     "mobx-react": "^5.4.3",
-    "mobx-router5": "^4.2.3",
     "parcel-plugin-bundle-visualiser": "^1.2.0",
     "postcss-preset-env": "^6.5.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-mobx-router5": "^6.1.1",
-    "router5": "^6.6.3",
+    "react-router5": "^7.0.1",
+    "router5": "^7.0.0",
+    "router5-plugin-browser": "^7.0.0",
+    "router5-plugin-logger": "^7.0.0",
     "tslib": "^1.9.3"
   },
   "devDependencies": {
-    "@types/jest": "^23.3.5",
-    "@types/react": "^16.4.18",
-    "@types/react-dom": "^16.0.9",
+    "@types/jest": "^23.3.10",
+    "@types/react": "^16.7.17",
+    "@types/react-dom": "^16.0.11",
     "concurrently": "^4.0.1",
     "husky": "^1.1.2",
     "jest": "^23.6.0",
