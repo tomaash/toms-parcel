@@ -23,7 +23,16 @@ export const routes: Route[] = [
         path: '/mid1'
       }, {
         name: 'mid2',
-        path: '/mid2'
+        path: '/mid2',
+        children: [
+          {
+            name: 'btm1',
+            path: '/btm1'
+          }, {
+            name: 'btm2',
+            path: '/btm2',
+          }
+        ]
       }
     ]
   }

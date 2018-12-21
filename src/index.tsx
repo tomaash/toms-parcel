@@ -3,24 +3,23 @@ import * as ReactDOM from 'react-dom'
 import { Provider } from 'mobx-react'
 
 import { configureRouter } from './routing/createRouter5'
-import { RouterProvider, Route } from 'react-router5'
+import { RouterProvider } from 'react-router5'
 
 import { Layout } from './pages/Layout'
 import { RouterStore } from './stores/RouterStore'
 
 const router = configureRouter()
 
-const RouterProviderHack: any = RouterProvider
+const RouterProviderComponent: any = RouterProvider
 
 export const App = (
   <Provider routerStore={RouterStore.getInstance()}>
-    <RouterProviderHack router={router}>
+    <RouterProviderComponent router={router}>
       <Layout />
-    </RouterProviderHack>
+    </RouterProviderComponent>
   </Provider>
 )
 
-// Render the entire app when the router starts
 router.start((err, state) => {
   ReactDOM.render(App, document.getElementById('root'))
 })

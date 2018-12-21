@@ -9,11 +9,15 @@ export class RouterStore {
   router: Router
   @observable state: State
 
-  @computed get stateLevels() {
-    return this.state && this.state.name.split('.')
+  @computed get stateName() {
+    return this.state.name
   }
-  @computed get rootState() {
-    return this.stateLevels && this.stateLevels[0]
+
+  @computed get stateNameLevels() {
+    return this.stateName.split('.')
+  }
+  @computed get rootStateName() {
+    return this.stateNameLevels[0]
   }
 
 }

@@ -9,8 +9,8 @@ import { Mid2 } from './Mid2/Mid2'
 @observer
 export class Top1 extends React.Component<{ routerStore?: RouterStore }> {
   renderSubcomponent() {
-    const { stateLevels } = this.props.routerStore
-    const level = stateLevels[1]
+    const { stateNameLevels } = this.props.routerStore
+    const level = stateNameLevels[1]
     switch (level) {
       case 'mid1': return <Mid1 />
       case 'mid2': return <Mid2 />

@@ -10,8 +10,8 @@ import { Bar } from './Bar';
 @observer
 export class Main extends React.Component<{ routerStore?: RouterStore }> {
   render() {
-    const { rootState } = this.props.routerStore
-    switch (rootState) {
+    const { rootStateName } = this.props.routerStore
+    switch (rootStateName) {
       case 'foo': return <Foo />
       case 'bar': return <Bar />
       case 'top1': return <Top1 />
