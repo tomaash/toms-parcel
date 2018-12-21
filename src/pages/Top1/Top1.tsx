@@ -12,24 +12,29 @@ export class Top1 extends React.Component<{ routerStore?: RouterStore }> {
     const { stateNameLevels } = this.props.routerStore
     const level = stateNameLevels[1]
     switch (level) {
-      case 'mid1': return <Mid1 />
-      case 'mid2': return <Mid2 />
-      default: return <div />
+      case 'mid1':
+        return <Mid1 />
+      case 'mid2':
+        return <Mid2 />
+      default:
+        return <div />
     }
   }
   render() {
-    return <div>
-      <h1>Top1</h1>
-      <nav>
-        <ConnectedLink activeClassName="activeLink" routeName="top1.mid1">
-          Mid1
-        </ConnectedLink>
+    return (
+      <div>
+        <h1>Top1</h1>
+        <nav>
+          <ConnectedLink activeClassName="activeLink" routeName="top1.mid1">
+            Mid1
+          </ConnectedLink>
 
-        <ConnectedLink activeClassName="activeLink" routeName="top1.mid2">
-          Mid2
-        </ConnectedLink>
-      </nav>
-      {this.renderSubcomponent()}
-    </div>
+          <ConnectedLink activeClassName="activeLink" routeName="top1.mid2">
+            Mid2
+          </ConnectedLink>
+        </nav>
+        {this.renderSubcomponent()}
+      </div>
+    )
   }
 }

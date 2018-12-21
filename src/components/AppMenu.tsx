@@ -5,24 +5,29 @@ import { RouterStore } from '../stores/RouterStore'
 
 @inject('routerStore')
 @observer
-export class AppMenu extends React.Component<{ routerStore?: RouterStore }, {}> {
+export class AppMenu extends React.Component<
+  { routerStore?: RouterStore },
+  {}
+> {
   render() {
     const { stateName } = this.props.routerStore
-    return <div>
-      {stateName}<br />
-      <nav>
-        <ConnectedLink activeClassName="activeLink" routeName="foo">
-          Foo
-        </ConnectedLink>
+    return (
+      <div>
+        {stateName}
+        <br />
+        <nav>
+          <ConnectedLink activeClassName="activeLink" routeName="foo">
+            Foo
+          </ConnectedLink>
 
-        <ConnectedLink activeClassName="activeLink" routeName="bar">
-          Bar
-        </ConnectedLink>
-        <ConnectedLink activeClassName="activeLink" routeName="top1">
-          Top1
-        </ConnectedLink>
-
-      </nav>
-    </div>
+          <ConnectedLink activeClassName="activeLink" routeName="bar">
+            Bar
+          </ConnectedLink>
+          <ConnectedLink activeClassName="activeLink" routeName="top1">
+            Top1
+          </ConnectedLink>
+        </nav>
+      </div>
+    )
   }
 }

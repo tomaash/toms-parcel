@@ -15,7 +15,7 @@ const routerOptions = {
 export function configureRouter() {
   const router = createRouter(routes, routerOptions)
   router.usePlugin(
-    router5PluginBrowser(),
+    router5PluginBrowser()
     // router5PluginLogger,
   )
 

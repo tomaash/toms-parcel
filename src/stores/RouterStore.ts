@@ -1,5 +1,5 @@
 import { observable, computed } from 'mobx'
-import { Route, State, Router } from 'router5';
+import { Route, State, Router } from 'router5'
 
 export class RouterStore {
   static instance: RouterStore
@@ -19,5 +19,4 @@ export class RouterStore {
   @computed get rootStateName() {
     return this.stateNameLevels[0]
   }
-
 }
