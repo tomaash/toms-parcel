@@ -7,11 +7,9 @@ import { RouterStore } from '../stores/RouterStore'
 @observer
 export class AppMenu extends React.Component<{ routerStore?: RouterStore }, {}> {
   render() {
-    const { state, currentRoute } = this.props.routerStore
-    console.log(state)
+    const { state } = this.props.routerStore
     return <div>
       {state && state.name}<br />
-      {currentRoute && currentRoute.extra}
       <nav>
         <ConnectedLink activeClassName="activeLink" routeName="foo">
           Foo
