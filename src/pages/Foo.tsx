@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Button } from '@material-ui/core'
+import Button from '@material-ui/core/Button'
 // import { fill, clone } from 'lodash-es'
 export class Foo extends React.Component {
   render() {

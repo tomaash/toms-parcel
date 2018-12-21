@@ -5,23 +5,22 @@ import { createRouter } from 'router5'
 import router5PluginBrowser from 'router5-plugin-browser'
 import router5PluginLogger from 'router5-plugin-logger'
 
-import routes from './routes'
-// import { routerStore } from './stores/RouterStore';
+import { routes } from './routes'
+import { makeMobxPlugin } from './mobxRouterPlugin'
+import { RouterStore } from '../stores/RouterStore'
 
 const routerOptions = {
-  defaultRoute: 'home',
+  defaultRoute: 'foo',
   strictQueryParams: true,
 }
 
 export function configureRouter() {
   const router = createRouter(routes, routerOptions)
-  router.usePlugin(router5PluginBrowser())
-  router.usePlugin(router5PluginLogger)
-  // Plugins
-
-  // .usePlugin(browser({ useHash: false }))
-  // .usePlugin(mobxPlugin(routerStore))
-  // .usePlugin(logger);
+  router.usePlugin(
+    router5PluginBrowser(),
+    makeMobxPlugin(routes, RouterStore.getInstance()),
+    router5PluginLogger,
+  )
 
   return router
 }

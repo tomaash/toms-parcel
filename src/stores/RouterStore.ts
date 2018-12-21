@@ -1,5 +1,20 @@
-import { RouterStore } from 'mobx-router5'
+import { observable, computed } from 'mobx'
+import { Route, State } from 'router5';
 
-// I instantiate it here because I could add something to the class before invoking new
+export class RouterStore {
+  static instance: RouterStore
+  static getInstance() {
+    return this.instance || (this.instance = new RouterStore())
+  }
+  @observable state: State
+  @observable currentRoute: Route | any
+  @computed get stateLevels() {
+    console.log(this.state)
+    // console.log(this.state.name)
+    return this.state && this.state.name.split('.')
+  }
+  @computed get rootState() {
+    return this.stateLevels && this.stateLevels[0]
+  }
 
-export const routerStore = new RouterStore()
+}

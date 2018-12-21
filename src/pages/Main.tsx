@@ -1,18 +1,20 @@
 import * as React from 'react'
-import { routeNode, RouteView } from 'react-mobx-router5'
-import routes from '../routes'
+import { ConnectedLink } from 'react-router5'
+import { observer, inject } from 'mobx-react'
+import { RouterStore } from '../stores/RouterStore';
+import { Top1 } from './Top1/Top1';
 
-const routeNodeName = '' // '' because root node
-
-class Main extends React.Component<{ route: any }> {
+@inject('routerStore')
+@observer
+export class Main extends React.Component<{ routerStore?: RouterStore }> {
   render() {
-    const { route } = this.props
-    // This will inject 'route' to the selected child component
-    return (
-      <RouteView route={route} routes={routes} routeNodeName={routeNodeName} />
-    )
+    const { rootState } = this.props.routerStore
+    console.log(rootState)
+    switch (rootState) {
+      case 'foo': return <h1>Foo</h1>
+      case 'bar': return <h1>Bar</h1>
+      case 'top1': return <Top1 />
+      default: return <div />
+    }
   }
 }
-
-// HOC to wrap a route node components
-export const MainWrapper = routeNode(routeNodeName)(Main)
