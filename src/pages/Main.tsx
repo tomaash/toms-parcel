@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { ConnectedLink } from 'react-router5'
 import { observer, inject } from 'mobx-react'
-import { RouterStore } from '../stores/RouterStore'
+import { RouterStore } from '~routing/RouterStore'
 import { Top1 } from './Top1/Top1'
 import { Foo } from './Foo'
 import { Bar } from './Bar'

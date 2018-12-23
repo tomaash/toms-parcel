@@ -6,13 +6,14 @@
     "jsx": "react",
     "noImplicitAny": false,
     "rootDir": "./src",
+    "baseUrl": ".",
+    "paths": {
+      "~*": ["./src/*"]
+    },
     "strictNullChecks": false,
     "experimentalDecorators": true,
     "skipLibCheck": true,
     "importHelpers": true,
-    "lib": [
-      "dom",
-      "es2015"
-    ]
+    "lib": ["dom", "es2015"]
   }
 }

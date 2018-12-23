@@ -3,7 +3,7 @@ import router5PluginBrowser from 'router5-plugin-browser'
 import router5PluginLogger from 'router5-plugin-logger'
 
 import { routes } from './routes'
-import { RouterStore } from '../stores/RouterStore'
+import { RouterStore } from '~routing/RouterStore'
 
 const routerStore = RouterStore.getInstance()
 

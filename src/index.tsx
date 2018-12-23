@@ -6,7 +6,7 @@ import { configureRouter } from './routing/createRouter5'
 import { RouterProvider } from 'react-router5'
 
 import { Layout } from './pages/Layout'
-import { RouterStore } from './stores/RouterStore'
+import { RouterStore } from '~routing/RouterStore'
 
 const router = configureRouter()
 
