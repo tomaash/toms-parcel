@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`JestPollyExample component JestPollyExample waits for load 1`] = `"BAR"`;
+
+exports[`JestPollyExample component JestPollyExample waits for load 2`] = `
+<DocumentFragment>
+  <h1>
+    BAR
+  </h1>
+</DocumentFragment>
+`;
